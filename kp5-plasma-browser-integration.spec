@@ -1,15 +1,15 @@
-%define		kdeplasmaver	5.21.5
+%define		kdeplasmaver	5.22.0
 %define		qtver		5.11.0
 %define		kpname		plasma-browser-integration
 
 Summary:	KDE Plasma Browser Integration
 Name:		kp5-%{kpname}
-Version:	5.21.5
+Version:	5.22.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	9b589f35a668ecee28a3c6e142dba6ea
+# Source0-md5:	b8190476d2304059a1ea40082ace01c4
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel
@@ -41,6 +41,7 @@ BuildRequires:	kf5-kxmlgui-devel
 BuildRequires:	kf5-plasma-framework-devel
 BuildRequires:	kf5-purpose-devel
 BuildRequires:	kf5-solid-devel
+BuildRequires:	kp5-plasma-workspace-devel
 BuildRequires:	ninja
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	xz
@@ -90,3 +91,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/opt/edge/native-messaging-hosts/org.kde.plasma.browser_integration.json
 %{_datadir}/krunner/dbusplugins/plasma-runner-browserhistory.desktop
 %{_datadir}/krunner/dbusplugins/plasma-runner-browsertabs.desktop
+%{_desktopdir}/org.kde.plasma.browser_integration.host.desktop
