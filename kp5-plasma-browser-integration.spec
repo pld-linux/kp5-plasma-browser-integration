@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	5.27.1
+%define		kdeplasmaver	5.27.2
 %define		qtver		5.15.2
 %define		kpname		plasma-browser-integration
 
 Summary:	KDE Plasma Browser Integration
 Name:		kp5-%{kpname}
-Version:	5.27.1
+Version:	5.27.2
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	b4af86328b9bc75edfd8e0f39b9d4fa4
+# Source0-md5:	93bc55e18f204bfe7126dd6bed68a8db
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel
