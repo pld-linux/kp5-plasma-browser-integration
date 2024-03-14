@@ -1,55 +1,56 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	5.93.0
+%define		kdeplasmaver	5.27.10
 %define		qtver		5.15.2
 %define		kpname		plasma-browser-integration
 
 Summary:	KDE Plasma Browser Integration
 Name:		kp5-%{kpname}
-Version:	5.93.0
-Release:	0.1
+Version:	5.27.10
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/unstable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	7e39e642fdc97aed12fc16c686cfcc59
+Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
+# Source0-md5:	e03d33ca8a9905df3c2901cef5512a14
 URL:		http://www.kde.org/
-BuildRequires:	Qt6Core-devel >= %{qtver}
-BuildRequires:	Qt6DBus-devel
-BuildRequires:	Qt6Gui-devel
-BuildRequires:	Qt6Widgets-devel
+BuildRequires:	Qt5Core-devel >= %{qtver}
+BuildRequires:	Qt5DBus-devel
+BuildRequires:	Qt5Gui-devel
+BuildRequires:	Qt5Widgets-devel
 BuildRequires:	cmake >= 3.16.0
 BuildRequires:	gettext-devel
-BuildRequires:	kf6-extra-cmake-modules
-BuildRequires:	kp5-plasma-activities-devel
-BuildRequires:	kf6-kauth-devel
-BuildRequires:	kf6-kcodecs-devel
-BuildRequires:	kf6-kcompletion-devel
-BuildRequires:	kf6-kconfigwidgets-devel
-BuildRequires:	kf6-kcoreaddons-devel
-BuildRequires:	kf6-kcrash-devel
-BuildRequires:	kf6-kdbusaddons-devel
-BuildRequires:	kf6-kfilemetadata-devel
-BuildRequires:	kf6-ki18n-devel
-BuildRequires:	kf6-kio-devel
-BuildRequires:	kf6-kitemviews-devel
-BuildRequires:	kf6-kjobwidgets-devel
-BuildRequires:	kf6-knotifications-devel
-BuildRequires:	kf6-kpackage-devel
-BuildRequires:	kf6-krunner-devel
-BuildRequires:	kf6-kservice-devel
-BuildRequires:	kf6-kwidgetsaddons-devel
-BuildRequires:	kf6-kwindowsystem-devel
-BuildRequires:	kf6-kxmlgui-devel
-BuildRequires:	kf6-purpose-devel
-BuildRequires:	kf6-solid-devel
+BuildRequires:	kf5-extra-cmake-modules
+BuildRequires:	kf5-kactivities-devel
+BuildRequires:	kf5-kauth-devel
+BuildRequires:	kf5-kcodecs-devel
+BuildRequires:	kf5-kcompletion-devel
+BuildRequires:	kf5-kconfigwidgets-devel
+BuildRequires:	kf5-kcoreaddons-devel
+BuildRequires:	kf5-kcrash-devel
+BuildRequires:	kf5-kdbusaddons-devel
+BuildRequires:	kf5-kfilemetadata-devel
+BuildRequires:	kf5-ki18n-devel
+BuildRequires:	kf5-kio-devel
+BuildRequires:	kf5-kitemviews-devel
+BuildRequires:	kf5-kjobwidgets-devel
+BuildRequires:	kf5-knotifications-devel
+BuildRequires:	kf5-kpackage-devel
+BuildRequires:	kf5-krunner-devel
+BuildRequires:	kf5-kservice-devel
+BuildRequires:	kf5-kwidgetsaddons-devel
+BuildRequires:	kf5-kwindowsystem-devel
+BuildRequires:	kf5-kxmlgui-devel
+BuildRequires:	kf5-plasma-framework-devel
+BuildRequires:	kf5-purpose-devel
+BuildRequires:	kf5-solid-devel
 BuildRequires:	kp5-plasma-workspace-devel >= %{kdeplasmaver}
 BuildRequires:	ninja
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		qt6dir		%{_libdir}/qt6
+%define		qt5dir		%{_libdir}/qt5
 
 %description
 KDE Plasma Browser Integration.
@@ -90,7 +91,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_prefix}/lib/mozilla
 %dir %{_prefix}/lib/mozilla/native-messaging-hosts
 %{_prefix}/lib/mozilla/native-messaging-hosts/org.kde.plasma.browser_integration.json
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kded/browserintegrationreminder.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/kf5/kded/browserintegrationreminder.so
 %dir %{_sysconfdir}/opt/edge
 %dir %{_sysconfdir}/opt/edge/native-messaging-hosts
 %{_sysconfdir}/opt/edge/native-messaging-hosts/org.kde.plasma.browser_integration.json
